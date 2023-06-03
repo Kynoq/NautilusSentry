@@ -1,5 +1,6 @@
 package com.nautilusmc.nautilussentry.commands;
 
+import com.nautilusmc.nautilussentry.utils.DiscordWebhookUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.OfflinePlayer;
@@ -81,6 +82,17 @@ public class Commands implements CommandExecutor {
                 }
 
                 sender.sendMessage(ChatColor.translateAlternateColorCodes('&', Objects.requireNonNull(messagesConfig.getString("add-comment")).replace("%player%", playerName)));
+
+                // Charger le fichier discordwebhookurl.yml
+                File webhookFile = new File(plugin.getDataFolder(), "discordwebhookurl.yml");
+                YamlConfiguration webhookConfig = YamlConfiguration.loadConfiguration(webhookFile);
+
+                // Vérifier la valeur de l'option enable-webhook dans discordwebhookurl.yml
+                if (webhookConfig.getBoolean("enable-webhook")) {
+                    // Exécuter la méthode DiscordWebhookUtil.sendWebhook seulement si enable-webhook est true
+                    DiscordWebhookUtil.sendWebhook(playerName, comment);
+                }
+
                 return true;
             } else if (args.length == 2 && args[0].equalsIgnoreCase("view")) {
                 if (!player.hasPermission("nautilussentry.view")) {

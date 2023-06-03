@@ -2,6 +2,7 @@ package com.nautilusmc.nautilussentry;
 
 import com.nautilusmc.nautilussentry.commands.Commands;
 import com.nautilusmc.nautilussentry.listeners.PlayerListener;
+import com.nautilusmc.nautilussentry.utils.DiscordWebhookUtil;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,6 +18,8 @@ public final class NautilusSentry extends JavaPlugin {
     }
     @Override
     public void onEnable() {
+
+        DiscordWebhookUtil.initialize(this);
 
         // Load messages.yml
         loadMessages();
@@ -45,4 +48,6 @@ public final class NautilusSentry extends JavaPlugin {
         }
         messagesConfig = YamlConfiguration.loadConfiguration(messagesFile);
     }
+
+
 }
