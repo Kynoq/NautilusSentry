@@ -1,0 +1,33 @@
+name: NautilusSentry
+version: '${project.version}'
+main: com.nautilusmc.nautilussentry.NautilusSentry
+api-version: 1.19
+author: Kynoq
+description: A plugin for assigning comments to players.
+commands:
+  ns:
+    description: Main command for NautilusSentry plugin
+    usage: /ns <add|view|clear|list>
+    permission: nautilussentry.use
+    aliases: [nautilussentry]
+    subcommands:
+      add:
+        description: Add a comment to a player
+        usage: /ns add <username> <comment>
+        permission: nautilussentry.add
+      view:
+        description: View comments for a player
+        usage: /ns view <username>
+        permission: nautilussentry.view
+      clear:
+        description: Clear all comments for a player
+        usage: /ns clear <username>
+        permission: nautilussentry.clear
+      list:
+        description: View the list of players with comments
+        usage: /ns list
+        permission: nautilussentry.list
+  permissions:
+    nautilussentry.notify:
+      description: Allows players to receive NautilusSentry alerts.
+      default: op

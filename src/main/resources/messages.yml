@@ -1,0 +1,13 @@
+# messages.yml
+
+no-comments: "&e&lSentry &7» &cNo comments found for &e%player%."
+no-permission: "&e&lSentry &7» &cYou don't have permission to execute this command."
+add-comment: "&e&lSentry &7» &aYour comment has been added to &e%player%."
+clear-comments: "&e&lSentry &7» &aAll comments associated with &e%player% &ahave been deleted."
+player-not-found: "&e&lSentry &7» &cThe specified player does not exist."
+error-on-save: "&e&lSentry &7» &cAn error occurred while saving the comment."
+error-on-delete: "&e&lSentry &7» &cAn error occurred while deleting the comment."
+list-is-empty: "&e&lSentry &7» &aThe list is empty."
+commented-players-list: "&e&lSentry &7» &aList of players with comments:"
+player-comment-list: "&e&lSentry &7» &aComments for &e%player% &8(%uuid%):"
+alert-on-connect: "&e&lSentry &7» &cPlayer &e%player% &chas just connected!"
